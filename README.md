@@ -1,2 +1,11 @@
 # python-veneto-web
-Python veneto web
+
+Python Veneto Web
+
+Command to run project:
+
+```
+poetry install
+poetry shell
+poe run
+```
