@@ -15,7 +15,7 @@
 						</li>
 						<li>
 							<a href="{{ url_for('about_us') }}"
-							   {% if request.path=="/about_us/" %}class="active" {% endif %}>
+							   {% if request.path=="/about-us/" %}class="active" {% endif %}>
 								About us
 							</a>
 						</li>
@@ -31,7 +31,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="{{ url_for('contact_us') }}" target=”_blank”
+							<a href="{{ url_for('contact_us') }}"
 							   {% if request.path=="/contact-us/" %}class="active" {% endif %}>
 								Contact Us
 							</a>
