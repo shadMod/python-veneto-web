@@ -1,0 +1,65 @@
+{% extends 'setup/layout.html' %}
+
+{% block title %}
+About Us
+{% endblock title %}
+
+{% block main %}
+<div class="page-heading normal-space">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h4 class="mb-3">
+					Chi siamo?
+				</h4>
+				<h6>
+					Bella domanda...
+				</h6>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock main %}
+
+{% block main_body %}
+<div class="item-details-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section-heading">
+					<div class="line-dec"></div>
+					<h2>
+						<em>
+							Contact Us
+						</em>
+					</h2>
+				</div>
+			</div>
+			<div class="col-lg-7">
+				<div class="left-image">
+					<img src="{{ url_for('static', path='assets/images/about-us/8l030g.jpg') }}"
+						 style="border-radius: 20px;">
+				</div>
+			</div>
+			<div class="col-lg-5 align-self-center">
+
+				<form id="contact" action="" method="post">
+					<div class="row">
+						<div class="col-12 text-center">
+							<h5 class="mb-3">
+								Siamo un piccolo gruppo di persone con la passione della programmazione e che vogliono
+								diffondere la loro passione anche al di fuori del nostro piccolo bunker chiamata casa.
+							</h5>
+							<h5>
+								Il nostro interesse è solo uno: parlare di python e di tutto l'universo che ci ruota
+								intorno; ed è così vasto che da soli è impossibile, ma insieme nulla lo è.
+							</h5>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock main_body %}

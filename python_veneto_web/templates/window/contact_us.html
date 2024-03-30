@@ -1,0 +1,89 @@
+{% extends 'setup/layout.html' %}
+
+{% block title %}
+Contact Us
+{% endblock title %}
+
+{% block main %}
+<div class="page-heading normal-space">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h4 class="mb-3">
+					Vuoi qualche info o semplicemente vuoi scriverci?
+				</h4>
+				<h6>
+					Usa il form qua sotto \o/
+				</h6>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock main %}
+
+{% block main_body %}
+<div class="item-details-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section-heading">
+					<div class="line-dec"></div>
+					<h2>
+						<em>
+							Contact Us
+						</em>
+					</h2>
+				</div>
+			</div>
+			<div class="col-lg-7">
+				<div class="left-image">
+					<img src="{{ url_for('static', path='assets/images/homepage/python-certification.png') }}"
+						 style="border-radius: 20px;">
+				</div>
+			</div>
+			<div class="col-lg-5 align-self-center">
+
+				<form id="contact" action="" method="post">
+					<div class="row">
+						<div class="col-12">
+							<fieldset>
+								<label for="username">
+									Your Name
+								</label>
+								<input type="username" name="username" id="username" placeholder="Ex. @alansmithee"
+									   autocomplete="on" required>
+							</fieldset>
+						</div>
+						<div class="col-12">
+							<fieldset>
+								<label for="title">
+									Mail
+								</label>
+								<input type="title" name="title" id="title" placeholder="Ex. Lyon King"
+									   autocomplete="on" required>
+							</fieldset>
+						</div>
+						<div class="col-12">
+							<fieldset>
+								<label for="description">
+									Message
+								</label>
+								<input type="description" name="description" id="description"
+									   placeholder="Give us your idea" autocomplete="on" required>
+							</fieldset>
+						</div>
+						<div class="col-12">
+							<fieldset>
+								<button type="submit" id="form-submit" class="orange-button">
+									Send
+								</button>
+							</fieldset>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock main_body %}

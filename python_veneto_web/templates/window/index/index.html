@@ -1,0 +1,18 @@
+{% extends 'setup/layout.html' %}
+
+{% block title %}
+Home Page
+{% endblock title %}
+
+{% block main %}
+{% include 'window/index/sections/main.html' %}
+{% endblock main %}
+
+{% block categories %}
+{% include 'window/index/sections/categories.html' %}
+{% include 'window/index/sections/news.html' %}
+{% endblock categories %}
+
+{% block post_categories %}
+{% include 'window/index/sections/aboutus.html' %}
+{% endblock post_categories %}
