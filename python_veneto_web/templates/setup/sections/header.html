@@ -1,0 +1,49 @@
+<header class="header-area header-sticky">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<nav class="main-nav">
+					<a href="{{ url_for('index') }}" class="logo">
+						<img src="{{ url_for('static', path='assets/images/logo/logo.png') }}" class="pe-3">
+						<img src="{{ url_for('static', path='assets/images/logo/logo_scritta.png') }}">
+					</a>
+					<ul class="nav">
+						<li>
+							<a href="{{ url_for('index') }}" {% if request.path=="/" %}class="active" {% endif %}>
+								Home
+							</a>
+						</li>
+						<li>
+							<a href="{{ url_for('about_us') }}"
+							   {% if request.path=="/about_us/" %}class="active" {% endif %}>
+								About us
+							</a>
+						</li>
+						<li>
+							<a href="{{ url_for('tutorial') }}"
+							   {% if request.path=="/tutorial/" %}class="active" {% endif %}>
+								Tutorial
+							</a>
+						</li>
+						<li>
+							<a href="{{ url_for('news') }}" {% if request.path=="/news/" %}class="active" {% endif %}>
+								News
+							</a>
+						</li>
+						<li>
+							<a href="{{ url_for('contact_us') }}" target=”_blank”
+							   {% if request.path=="/contact-us/" %}class="active" {% endif %}>
+								Contact Us
+							</a>
+						</li>
+					</ul>
+					<a class='menu-trigger'>
+						<span>
+							Menu
+						</span>
+					</a>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>

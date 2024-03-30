@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+
+	<title>
+		PyVeneto -
+		{% block title %}
+		Layout - index
+		{% endblock title %}
+	</title>
+	{% include 'setup/sections/stylesheet.html' %}
+
+</head>
+<body>
+
+{% block preloader %}
+<div id="js-preloader" class="js-preloader">
+	<div class="preloader-inner">
+		<span class="dot"></span>
+		<div class="dots">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+</div>
+{% endblock preloader %}
+
+{% block header %}
+{% include 'setup/sections/header.html' %}
+{% endblock header %}
+
+{% block main %}
+{% endblock main %}
+
+{% block main_body %}
+<div class="categories-collections">
+	<div class="container">
+		<div class="row">
+			{% block categories %}
+			{% endblock categories %}
+		</div>
+	</div>
+</div>
+{% endblock main_body %}
+
+{% block post_categories %}
+{% endblock post_categories %}
+
+{% block footer %}
+{% include 'setup/sections/footer.html' %}
+{% endblock footer %}
+
+{% block scripts %}
+{% include 'setup/sections/scripts.html' %}
+{% endblock scripts %}
+
+</body>
+</html>
