@@ -1,3 +1,6 @@
 [submodule "python_veneto_web/articles/news-article"]
 	path = python_veneto_web/articles/news-article
 	url = git@github.com:shadMod/python-veneto-news-articles.git
+[submodule "python_veneto_web/articles/tutorial-article"]
+	path = python_veneto_web/articles/tutorial-article
+	url = git@github.com:shadMod/python-veneto-tutorial-articles.git
