@@ -1,0 +1,25 @@
+{% extends 'setup/layout.html' %}
+
+{% block title %}
+News - {{ idk }}
+{% endblock title %}
+
+{% block main %}
+<div class="page-heading tutorial-header-space"></div>
+{% endblock main %}
+
+{% block main_body %}
+<div class="item-details-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 align-self-center">
+				<div class="row">
+					<div class="col-12 text-center" id="contact">
+						{{ article|safe }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock main_body %}
