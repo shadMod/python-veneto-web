@@ -26,7 +26,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="{{ url_for('news') }}" {% if request.path=="/news/" %}class="active" {% endif %}>
+							<a href="{{ url_for('news') }}" {% if "/news/" in request.path %}class="active" {% endif %}>
 								News
 							</a>
 						</li>
