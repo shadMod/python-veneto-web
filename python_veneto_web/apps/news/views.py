@@ -13,9 +13,14 @@ router = APIRouter()
 
 @router.get("/news/", response_class=HTMLResponse)
 async def news(request: Request):
-    news_dir = os.path.join(BASE_DIR, "articles", "news_articles")
+    news_dir = os.path.join(BASE_DIR, "articles", "news-article")
+    filename_list = [
+        filename
+        for filename in os.listdir(news_dir)
+        if os.path.basename(filename).split(".")[1] == "md"
+    ]
     news_list = []
-    for filename in os.listdir(news_dir):
+    for filename in filename_list:
         file_path = os.path.join(news_dir, filename)
         news_list.append(get_data_file_path_md(file_path, False))
     news_list.sort(key=lambda x: datetime.strptime(x["date"], "%d/%m/%Y"), reverse=True)
@@ -30,9 +35,7 @@ async def news(request: Request):
 
 @router.get("/news/{article_name}/", response_class=HTMLResponse)
 async def news_article(request: Request, article_name: str):
-    file_path = os.path.join(
-        BASE_DIR, "articles", "news_articles", f"{article_name}.md"
-    )
+    file_path = os.path.join(BASE_DIR, "articles", "news-article", f"{article_name}.md")
     data = get_data_file_path_md(file_path)
     if not data:
         data = {}
