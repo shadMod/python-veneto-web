@@ -67,10 +67,10 @@ async def tutorial_category(request: Request, category: str):
     )
 
 
-@router.get("/tutorial/{article_name}/", response_class=HTMLResponse)
-async def tutorial_article(request: Request, article_name: str):
+@router.get("/tutorial/{category}/{article_name}/", response_class=HTMLResponse)
+async def tutorial_article(request: Request, category: str, article_name: str):
     file_path = os.path.join(
-        BASE_DIR, "articles", "tutorial-article", f"{article_name}.html"
+        BASE_DIR, "articles", "tutorial-article", category, f"{article_name}.html"
     )
     with open(file_path) as fn:
         article = fn.read()
