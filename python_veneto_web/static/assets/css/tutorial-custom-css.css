@@ -1,0 +1,71 @@
+.copy-text p {
+  display: grid;
+  align-items: center;
+  font-size: 18px;
+  width: 100%;
+  height: 100%;
+  padding: 15px 15px;
+  background-color: #282b2f;
+  border: 1px solid #404245;
+  margin-bottom: 0px;
+  font-weight: 500;
+  color: #afafaf;
+}
+.copy-text button {
+  height: 100%;
+  padding: 10px;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.copy-text button:active {
+  background: #809ce2;
+}
+.copy-text button:before {
+  content: "Copied";
+  position: absolute;
+  top: -45px;
+  right: 0px;
+  background: #5c81dc;
+  padding: 8px 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  display: none;
+}
+.copy-text button:after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 25px;
+  width: 10px;
+  height: 10px;
+  background: #5c81dc;
+  transform: rotate(45deg);
+  display: none;
+}
+.copy-text.active button:before,
+.copy-text.active button:after {
+  display: block;
+}
+#contact input {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding: 0px 15px;
+  background-color: #282b2f;
+  border: 1px solid #404245;
+  margin-bottom: 0px;
+  font-weight: 500;
+  color: #afafaf;
+}
+#contact button {
+  margin-top: 0px;
+  width: 100%;
+  text-align: center;
+}
+.section-heading h2 {
+  text-transform: none;
+}
