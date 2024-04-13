@@ -4,6 +4,10 @@
 News - {{ idk }}
 {% endblock title %}
 
+{% block custom_css %}
+<link href="{{ url_for('static', path='assets/css/tutorial-custom-css.css') }}" rel="stylesheet">
+{% endblock custom_css %}
+
 {% block main %}
 <div class="page-heading tutorial-header-space"></div>
 {% endblock main %}
