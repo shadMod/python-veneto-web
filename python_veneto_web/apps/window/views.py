@@ -1,10 +1,13 @@
-from fastapi import APIRouter
-from fastapi import Request
+import logging
+
+from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
 
 from ..common_envs import templates
 
 router = APIRouter()
+
+logger = logging.getLogger(__name__)
 
 
 @router.get("/", response_class=HTMLResponse)
