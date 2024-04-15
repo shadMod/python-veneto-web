@@ -8,7 +8,9 @@ def clean_html(value, tag_html: str = "p"):
     return value
 
 
-def get_data_file_path_md(file_path: str, with_article: bool = True) -> dict | None:
+def get_data_file_path_md(
+    file_path: str, with_article: bool = True
+) -> dict | None:
     """Add me.
 
     :param file_path: Add me.

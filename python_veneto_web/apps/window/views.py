@@ -44,7 +44,8 @@ async def index(request: Request):
             ],
             "news_list": [
                 {
-                    "title": "Python 3.10.14, 3.9.19, and 3.8.19 is now available",
+                    "title": "Python 3.10.14, 3.9.19, and 3.8.19 is now"
+                    "available",
                     "author": "ShadMod",
                     "category": "Python News",
                     "link": "#",
@@ -62,7 +63,8 @@ async def index(request: Request):
                     "link": "#",
                 },
                 {
-                    "title": "Lightning AI becomes a PyTorch Foundation premier member",
+                    "title": "Lightning AI becomes a PyTorch Foundation"
+                    "premier member",
                     "author": "ShadMod",
                     "category": "AI",
                     "link": "#",

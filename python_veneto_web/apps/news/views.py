@@ -23,7 +23,9 @@ async def news(request: Request):
     for filename in filename_list:
         file_path = os.path.join(news_dir, filename)
         news_list.append(get_data_file_path_md(file_path, False))
-    news_list.sort(key=lambda x: datetime.strptime(x["date"], "%d/%m/%Y"), reverse=True)
+    news_list.sort(
+        key=lambda x: datetime.strptime(x["date"], "%d/%m/%Y"), reverse=True
+    )
     return templates.TemplateResponse(
         request=request,
         name="news/index.html",
@@ -35,7 +37,9 @@ async def news(request: Request):
 
 @router.get("/news/{article_name}/", response_class=HTMLResponse)
 async def news_article(request: Request, article_name: str):
-    file_path = os.path.join(BASE_DIR, "articles", "news-article", f"{article_name}.md")
+    file_path = os.path.join(
+        BASE_DIR, "articles", "news-article", f"{article_name}.md"
+    )
     data = get_data_file_path_md(file_path)
     if not data:
         data = {}
