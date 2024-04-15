@@ -1,5 +1,6 @@
 import logging.config
 import os.path
+import traceback
 
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
@@ -49,3 +50,14 @@ app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 app.include_router(window_views.router)
 app.include_router(tutorial_views.router)
 app.include_router(news_views.router)
+
+
+async def catch_exceptions_middleware(request: Request, call_next):
+    try:
+        return await call_next(request)
+    except Exception as e:
+        logging.error(traceback.format_exc())
+        raise e
+
+
+app.middleware("http")(catch_exceptions_middleware)
