@@ -24,5 +24,7 @@ build-backend = "poetry.core.masonry.api"
 run = "poetry run uvicorn python_veneto_web.apps.run:app --reload"
 flake8 = "poetry run flake8 python_veneto_web"
 black = "poetry run black python_veneto_web tests"
-mypy = "poetry run mypy --config-file mypy.ini"
 pytest = "poetry run pytest tests"
+
+[tool.black]
+line-length = 78
