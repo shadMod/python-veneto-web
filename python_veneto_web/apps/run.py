@@ -13,9 +13,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 STATIC_DIR = os.path.join(BASE_DIR, "static/")
 LOGS_DIR = os.path.join(BASE_DIR, "logs")
 
-if not os.path.isdir(LOGS_DIR):
-    os.makedirs(LOGS_DIR)
-
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
