@@ -1,12 +1,18 @@
 import os.path
+import sys
 from datetime import datetime
 
 from fastapi import APIRouter
 from fastapi import Request
 from fastapi.responses import HTMLResponse
 
-from .utils import get_data_file_path_md
-from ..common_envs import BASE_DIR, templates
+project_root = os.path.join(
+    os.path.abspath(os.path.dirname(__file__)), "..", ".."
+)
+sys.path.append(project_root)
+
+from apps.news.utils import get_data_file_path_md
+from apps.common_envs import BASE_DIR, templates
 
 router = APIRouter()
 
