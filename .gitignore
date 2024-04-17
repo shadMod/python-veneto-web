@@ -45,7 +45,6 @@ cache/
 *.pot
 
 # Logs
-logs
 *.log
 
 # pyenv
