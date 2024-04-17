@@ -59,4 +59,4 @@ async def catch_exceptions_middleware(request: Request, call_next):
         raise e
 
 
-app.middleware("http")(catch_exceptions_middleware)
+# app.middleware("http")(catch_exceptions_middleware)
