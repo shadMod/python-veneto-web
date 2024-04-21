@@ -1,18 +1,12 @@
 import os.path
-import sys
 from datetime import datetime
 
 from fastapi import APIRouter
 from fastapi import Request
 from fastapi.responses import HTMLResponse
 
-project_root = os.path.join(
-    os.path.abspath(os.path.dirname(__file__)), "..", ".."
-)
-sys.path.append(project_root)
-
-from apps.news.utils import get_data_file_path_md
-from apps.common_envs import BASE_DIR, templates
+from .utils import get_data_from_markdown
+from ..common_envs import BASE_DIR, templates
 
 router = APIRouter()
 
@@ -28,7 +22,7 @@ async def news(request: Request):
     news_list = []
     for filename in filename_list:
         file_path = os.path.join(news_dir, filename)
-        news_list.append(get_data_file_path_md(file_path, False))
+        news_list.append(get_data_from_markdown(file_path, False))
     news_list.sort(
         key=lambda x: datetime.strptime(x["date"], "%d/%m/%Y"), reverse=True
     )
@@ -46,7 +40,7 @@ async def news_article(request: Request, article_name: str):
     file_path = os.path.join(
         BASE_DIR, "articles", "news-article", f"{article_name}.md"
     )
-    data = get_data_file_path_md(file_path)
+    data = get_data_from_markdown(file_path)
     if not data:
         data = {}
     return templates.TemplateResponse(
