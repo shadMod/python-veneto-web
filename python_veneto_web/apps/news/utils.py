@@ -3,24 +3,46 @@ import os.path
 import markdown
 
 
-def clean_html(value, tag_html: str = "p"):
+def clean_html(value: str, tag_html: str = "p") -> str:
+    """Cleans up the value with selected html tags.
+
+    Parameters
+    ----------
+    value : str
+        The value to clean.
+    tag_html : str
+        The html tag to clean.
+
+    Returns
+    -------
+    str
+        Return cleaned value.
+    """
     value = value.replace(f"<{tag_html}>", "").replace(f"</{tag_html}>", "")
     return value
 
 
-def get_data_file_path_md(
-    file_path: str, with_article: bool = True
+def get_data_from_markdown(
+    markdown_path: str, with_article: bool = True
 ) -> dict | None:
-    """Add me.
+    """Get data from markdown.
 
-    :param file_path: Add me.
-    :param with_article: Add me.
-    :return: (str | None) Add me.
+    Parameters
+    ----------
+    markdown_path : str
+        The markdown file path.
+    with_article : bool
+        True if you want it to return the whole article, False otherwise.
+
+    Returns
+    -------
+    dict | None
+        The data file path.
     """
-    if not os.path.exists(file_path):
+    if not os.path.exists(markdown_path):
         return None
 
-    with open(file_path, "r") as fn:
+    with open(markdown_path, "r") as fn:
         render_html = markdown.markdown(fn.read())
         row_list = render_html.split("\n")
         header = [row for row in row_list[:3]]
@@ -28,7 +50,7 @@ def get_data_file_path_md(
             "title": clean_html(header[0]),
             "author": clean_html(header[1]),
             "date": clean_html(header[2]),
-            "file_path": os.path.basename(file_path).replace(".md", ""),
+            "file_path": os.path.basename(markdown_path).replace(".md", ""),
         }
         if with_article:
             body = [row for row in row_list[3:]]
