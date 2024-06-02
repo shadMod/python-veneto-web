@@ -8,11 +8,11 @@ readme = "README.md"
 packages = [{ include = "python_veneto_web" }]
 
 [tool.poetry.dependencies]
-python = "3.12.2"
+python = "3.11.9"
 fastapi = "0.110.0"
 uvicorn = { extras = ["standard"], version = "0.28.0" }
 black = "24.3.0"
-jinja2 = "3.1.3"
+jinja2 = "3.1.4"
 markdown = "3.6"
 a2wsgi = "1.10.4"
 
