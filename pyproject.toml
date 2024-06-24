@@ -8,13 +8,16 @@ readme = "README.md"
 packages = [{ include = "python_veneto_web" }]
 
 [tool.poetry.dependencies]
-python = "3.11.9"
-fastapi = "0.110.0"
-uvicorn = { extras = ["standard"], version = "0.28.0" }
-black = "24.3.0"
+python = "^3.12"
 jinja2 = "3.1.4"
 markdown = "3.6"
 a2wsgi = "1.10.4"
+alembic = "1.13.1"
+asyncpg = "0.29.0"
+fastapi = "0.111.0"
+sqlmodel = "0.0.19"
+uvicorn = { extras = ["standard"], version = "0.28.0" }
+black = "24.4.2"
 
 [build-system]
 requires = ["poetry-core"]
@@ -23,7 +26,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.poe.tasks]
 run = "poetry run uvicorn python_veneto_web.apps.run:app --reload"
 flake8 = "poetry run flake8 python_veneto_web"
-black = "poetry run black python_veneto_web tests"
+black = "poetry run black python_veneto_web"
 pytest = "poetry run pytest tests"
 
 [tool.black]
