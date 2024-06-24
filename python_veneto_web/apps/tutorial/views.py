@@ -1,4 +1,5 @@
 import os.path
+from uuid import uuid4
 
 from fastapi import APIRouter, Depends, Request
 from fastapi.responses import HTMLResponse
@@ -51,6 +52,21 @@ async def tutorial(
             ]
         },
     )
+
+
+@router.post("/tutorial/category/add")
+async def add_category(
+    category: Category, session: AsyncSession = Depends(get_session)
+):
+    category = Category(
+        id=uuid4(),
+        name=category.name,
+        icon=category.icon,
+    )
+    session.add(category)
+    await session.commit()
+    await session.refresh(category)
+    return category
 
 
 @router.get("/tutorial/{category}/", response_class=HTMLResponse)
