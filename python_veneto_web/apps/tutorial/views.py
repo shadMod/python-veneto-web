@@ -1,16 +1,24 @@
 import os.path
 
-from fastapi import APIRouter
-from fastapi import Request
+from fastapi import APIRouter, Depends, Request
 from fastapi.responses import HTMLResponse
+from sqlmodel.ext.asyncio.session import AsyncSession
+from sqlmodel import select
 
 from ..common_envs import BASE_DIR, templates
+from ..db import get_session
+from ..tutorial.models import Category
 
 router = APIRouter()
 
 
 @router.get("/tutorial/", response_class=HTMLResponse)
-async def tutorial(request: Request):
+async def tutorial(
+    request: Request, session: AsyncSession = Depends(get_session)
+):
+    result = await session.execute(select(Category))
+    categories = result.scalars().all()
+    print(categories)
     return templates.TemplateResponse(
         request=request,
         name="tutorial/index.html",
